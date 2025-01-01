@@ -1,0 +1,26 @@
+The solution involves a better understanding of CSS selector specificity and using more precise selectors to ensure the desired styling is applied. In this case, adding more specific selectors to correctly target elements could fix the issue. Here's a possible solution:
+
+```css
+div {
+  color: blue;
+}
+
+.container div {
+  color: red; /*This will be overridden by the more specific selector below*/
+}
+
+#myDiv {
+  color: green; /*This will be overridden by the more specific selector below*/
+}
+
+#myDiv.container {
+  color: purple; /* This will be overridden by the more specific selector below*/
+}
+
+#myDiv.container div { /* More specific, it takes precedence*/
+  color: yellow;
+}
+/* Add more specific selectors as needed to avoid unexpected inheritance*/
+```
+
+By understanding how CSS specificity works and using appropriate selectors, we can achieve the desired visual effect and avoid unexpected inheritance.
